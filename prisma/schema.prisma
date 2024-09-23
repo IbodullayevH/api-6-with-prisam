@@ -1,0 +1,56 @@
+generator schema {
+    provider = "prisma-client-js"
+}
+
+datasource verceldb {
+    provider = "postgresql"
+    url      = env("URL")
+}
+
+model categorys {
+    id     Int      @id @default(autoincrement())
+    name   String?
+    phones phones[]
+}
+
+model phones {
+    id          Int        @id @default(autoincrement())
+    name        String?
+    price       Int?
+    descripton  String?
+    category_id Int?
+    categorys   categorys? @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+    id          Int         @id @default(autoincrement())
+    fullname    String?
+    email       String?
+    password    String?
+    username    String?
+    phonenumber String?
+    users_img   users_img[]
+}
+
+model users_img {
+    id      Int     @id @default(autoincrement())
+    userid  Int?
+    imglink String?
+    users   users?  @relation(fields: [userid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model products {
+    id                Int        @id @default(autoincrement())
+    productname       String
+    productprice      String
+    productdesc       String
+    productbestbefore String
+    countries         countries? @relation(fields: [countriesId], references: [id])
+    countriesId       Int?
+}
+
+model countries {
+    id           Int        @id @default(autoincrement())
+    countriename String
+    products     products[]
+}

@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+      "target": "es2016",
+      "module": "commonjs",
+      "rootDir": "./src",
+      "outDir": "./dist",
+      "baseUrl": "./",
+      "paths": {
+          "@interfaces": [
+              "./src/interfaces"
+          ],
+          "@controllers": [
+              "./src/controllers/index.ts"
+          ],
+          "@models": [
+              "./src/models/"
+          ],
+          "@errors": [
+              "./src/errors/index.ts"
+          ],
+          "@config": [
+            "./src/config/index.ts"
+          ],
+
+          "@middlewares": [
+            "./src/middleware/index.ts"
+          ]
+      },
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true
+  },
+  "include": [
+      "src/**/*"
+  ],
+  "exclude": [
+      "./dist/"
+  ]
+}
