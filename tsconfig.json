@@ -1,40 +1,40 @@
 {
-  "compilerOptions": {
+    "compilerOptions": {
       "target": "es2016",
       "module": "commonjs",
       "rootDir": "./src",
       "outDir": "./dist",
-      "baseUrl": "./",
+      "baseUrl": "./src",  // Baza yo'lini src ga o'rnatish
       "paths": {
-          "@interfaces": [
-              "./src/interfaces"
-          ],
-          "@controllers": [
-              "./src/controllers/index.ts"
-          ],
-          "@models": [
-              "./src/models/"
-          ],
-          "@errors": [
-              "./src/errors/index.ts"
-          ],
-          "@config": [
-            "./src/config/index.ts"
-          ],
-
-          "@middlewares": [
-            "./src/middleware/index.ts"
-          ]
+        "@interfaces/*": [
+          "interfaces/*"
+        ],
+        "@controllers/*": [
+          "controllers/*"
+        ],
+        "@models/*": [
+          "models/*"
+        ],
+        "@errors/*": [
+          "errors/*"
+        ],
+        "@config/*": [
+          "config/*"
+        ],
+        "@middlewares/*": [
+          "middleware/*"
+        ]
       },
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
       "strict": true,
       "skipLibCheck": true
-  },
-  "include": [
+    },
+    "include": [
       "src/**/*"
-  ],
-  "exclude": [
-      "./dist/"
-  ]
-}
+    ],
+    "exclude": [
+      "dist/"
+    ]
+  }
+  

@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CountriesController = void 0;
-const _config_1 = require("@config");
-const _errors_1 = require("@errors");
+const prismaConfig_1 = require("../config/index");
+const errorHandler_1 = require("../middleware/errorMiddleware");
 class CountriesController {
     static getAllCountries(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let dataCountries = yield _config_1.prisma.countries.findMany({
+                let dataCountries = yield prismaConfig_1.prisma.countries.findMany({
                     include: {
                         products: {
                             select: {
@@ -32,7 +32,7 @@ class CountriesController {
                 });
             }
             catch (error) {
-                next(new _errors_1.ErrorHandler(error.message, error.status));
+                next(new errorHandler_1.ErrorHandler(error.message, error.status));
             }
         });
     }

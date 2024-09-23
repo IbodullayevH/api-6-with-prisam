@@ -1,4 +1,4 @@
-import { CountriesController } from "@controllers";
+import { CountriesController } from "@controllers/countrieController";
 import { Router } from "express";
 const countrieRoute: Router = Router()
 

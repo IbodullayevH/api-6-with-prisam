@@ -1,5 +1,5 @@
-import { prisma } from "@config";
-import { ErrorHandler } from "@errors";
+import { prisma } from "@config/prismaConfig";
+import { ErrorHandler } from "@errors/errorHandler";
 import { NextFunction, Request, Response } from "express";
 
 export class CountriesController {
