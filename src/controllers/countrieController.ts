@@ -1,5 +1,5 @@
-import { prisma } from "@config/prismaConfig";
-import { ErrorHandler } from "@errors/errorHandler";
+import { prisma } from "src/config";
+import { ErrorHandler } from "../errors/index";
 import { NextFunction, Request, Response } from "express";
 
 export class CountriesController {
@@ -18,7 +18,7 @@ export class CountriesController {
 
             return res.status(200).send({
                 success: true,
-                message: "All data products countries",
+                message: "All data countries",
                 data: dataCountries
             })
         } catch (error: any) {
